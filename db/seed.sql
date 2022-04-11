@@ -1,3 +1,4 @@
+-- Seeding the department table with dept_name
 INSERT INTO department (dept_name)
 VALUES 
 ('IT'),
@@ -5,6 +6,7 @@ VALUES
 ('Sales & Marketing'),
 ('Operations');
 
+-- Seeding the role table with title, salary, and dept_id
 INSERT INTO role (title, salary, dept_id)
 VALUES
 ('Full Stack Developer', 80000, 1),
@@ -16,7 +18,7 @@ VALUES
 ('Project Manager', 100000, 4),
 ('Operations Manager', 90000, 4);
 
-
+-- Seeding the employee table with first_name, last_name, role_id, and manager_id
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES 
 ('Mark', 'Koppen', 2, null),
