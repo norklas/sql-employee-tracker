@@ -2,6 +2,14 @@
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
 
+const {
+  viewAllDepartment,
+  viewAllRole,
+  viewAllEmployee,
+  viewEmployeeByManager,
+  viewTotalBudgetByDept,
+} = require("./lib/view");
+
 // dotenv require for password encryption
 require("dotenv").config();
 
@@ -23,7 +31,7 @@ db.connect((err) => {
   startPrompt();
 });
 
-// startPrompt function to initialize inquier prompt
+// startPrompt function to initialize inquirer prompt
 function startPrompt() {
   inquirer
     .prompt({
@@ -48,7 +56,23 @@ function startPrompt() {
       ],
     })
     .then((userInput) => {
+      // Using a switch statement for the answers
       switch (userInput.actions) {
+        // Using cases to call matching functions
+        case "View all employees":
+          viewAllEmployee(db, startPrompt);
+          // Can't forget to break each case!
+          break;
+        case "View all roles":
+          viewAllRole(db, startPrompt);
+          break;
+        case "View all departments":
+          viewAllDepartment(db, startPrompt);
+          break;
+        case "View employees by manager":
+          viewEmployeeByManager(db, startPrompt);
+        case "View total budget by department":
+          viewTotalBudgetByDept(db, startPrompt);
         case "Exit":
           db.end();
           break;

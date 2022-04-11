@@ -17,7 +17,7 @@ CREATE TABLE role (
     title VARCHAR(30),
     salary DECIMAL(8, 2),
     dept_id INTEGER,
-    CONSTRAINT fk_dept_id FOREIGN KEY (dept_id) REFERENCES department (id) ON DELETE CASCADE
+    CONSTRAINT fk_dept_id FOREIGN KEY (dept_id) REFERENCES department(id) ON DELETE SET NULL
 );
 
 -- Creating employee table with id, first_name, last_name, role_id, and manager_id. Created two foreign key constraints, the first is role_id, which references the id in the role table. The second is manager_id which references id in the employee table.
@@ -26,7 +26,7 @@ CREATE TABLE employee (
     first_name VARCHAR(30),
     last_name VARCHAR(30),
     role_id INTEGER,
-    CONSTRAINT fk_role_id FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE CASCADE,
+    CONSTRAINT fk_role_id FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE SET NULL,
     manager_id INTEGER,
     CONSTRAINT fk_manager_id FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL
 );
