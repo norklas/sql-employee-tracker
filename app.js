@@ -10,6 +10,8 @@ const {
   viewTotalBudgetByDept,
 } = require("./lib/view");
 
+const { addDept, addRole, addEmployee } = require("./lib/add");
+
 // dotenv require for password encryption
 require("dotenv").config();
 
@@ -71,8 +73,19 @@ function startPrompt() {
           break;
         case "View employees by manager":
           viewEmployeeByManager(db, startPrompt);
+          break;
         case "View total budget by department":
           viewTotalBudgetByDept(db, startPrompt);
+          break;
+        case "Add employee":
+          addEmployee(db, startPrompt);
+          break;
+        case "Add role":
+          addRole(db, startPrompt);
+          break;
+        case "Add department":
+          addDept(db, startPrompt);
+          break;
         case "Exit":
           db.end();
           break;
