@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
 
+// Importing view functions from lib/view.js
 const {
   viewAllDepartment,
   viewAllRole,
@@ -10,10 +11,13 @@ const {
   viewTotalBudgetByDept,
 } = require("./lib/view");
 
+// Importing add functions from lib/add.js
 const { addDept, addRole, addEmployee } = require("./lib/add");
 
+// Importing update functions from lib/update.js
 const { updateEmpRole, updateEmpManager } = require("./lib/update");
 
+// Importing delete functions from lib/delete.js
 const { deleteDept, deleteRole, deleteEmployee } = require("./lib/delete");
 
 // dotenv require for password encryption
