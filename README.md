@@ -2,6 +2,8 @@
 
 ## Description
 
+A CLI application that uses CRUD operations to manage an employee roster.
+
 My motivation for this project was to familiarize myself with using raw **MySQL** statements, as well as working with setting up a database, creating tables for the database, and seeding the database.
 
 I learned a lot about using raw **MySQL** statements. I also learned how to set up a project's directory, and I dabbled a little with using **dotenv** to hide my password from the public. I struggled when working with arrays and properly mapping over them, but with some Googling and scouring stackoverflow, I eventually came around to using it.
