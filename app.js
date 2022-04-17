@@ -12,6 +12,8 @@ const {
 
 const { addDept, addRole, addEmployee } = require("./lib/add");
 
+const { updateEmpRole, updateEmpManager } = require("./lib/update");
+
 const { deleteDept, deleteRole, deleteEmployee } = require("./lib/delete");
 
 // dotenv require for password encryption
@@ -87,6 +89,12 @@ function startPrompt() {
           break;
         case "Add department":
           addDept(db, startPrompt);
+          break;
+        case "Update employee role":
+          updateEmpRole(db, startPrompt);
+          break;
+        case "Update employee manager":
+          updateEmpManager(db, startPrompt);
           break;
         case "Delete employee":
           deleteEmployee(db, startPrompt);
